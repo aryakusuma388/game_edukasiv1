@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+canvas {
+  border: 2px solid black;
+  margin-bottom: 10px;
+}
+#controls button {
+  margin: 5px;
+  padding: 10px 15px;
+}
+#commandList {
+  font-weight: bold;
+  color: darkblue;
+}
