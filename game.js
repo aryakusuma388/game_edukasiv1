@@ -9,10 +9,10 @@ let currentLevel = 1;
 let imagesLoaded = 0;
 
 const robotImg = new Image();
-robotImg.src = "murid.png";
+robotImg.src = "icon/murid.png";
 
 const brokenRobotImg = new Image();
-brokenRobotImg.src = "https://cdn-icons-png.flaticon.com/512/2942/2942958.png";
+brokenRobotImg.src = "icon/sekolah.png";
 
 robotImg.onload = imageLoaded;
 brokenRobotImg.onload = imageLoaded;
