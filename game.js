@@ -9,10 +9,10 @@ let currentLevel = 1;
 let imagesLoaded = 0;
 
 const robotImg = new Image();
-robotImg.src = "https://cdn-icons-png.flaticon.com/512/4712/4712100.png";
+robotImg.src = "https://cdn-icons-png.flaticon.com/512/4140/4140048.png";
 
 const brokenRobotImg = new Image();
-brokenRobotImg.src = "https://cdn-icons-png.flaticon.com/512/4712/4712044.png";
+brokenRobotImg.src = "https://cdn-icons-png.flaticon.com/512/2942/2942958.png";
 
 robotImg.onload = imageLoaded;
 brokenRobotImg.onload = imageLoaded;
