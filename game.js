@@ -14,6 +14,10 @@ robotImg.src = "icon/murid.png";
 const brokenRobotImg = new Image();
 brokenRobotImg.src = "icon/sekolah.png";
 
+const obstacleImg = new Image();
+obstacleImg.src = "icon/dinding.png";
+
+
 robotImg.onload = imageLoaded;
 brokenRobotImg.onload = imageLoaded;
 
@@ -25,12 +29,12 @@ function imageLoaded() {
 }
 
 const levels = {
-  1: { start: [0, 0], goal: [4, 4], obstacles: [] },
+  1: { start: [0, 0], goal: [3, 5], obstacles: [[0, 3],[0, 4],[0, 5],[0, 6],[0, 7],[1, 1],[1, 7],[2, 1],[2, 2],[2, 3],[2, 4],[2, 5],[2, 7],[3, 7],[4, 0],[4, 1],[4, 2],[4, 3],[4, 4],[4, 5],[4, 6],[4, 7]] },
   2: { start: [0, 0], goal: [6, 2], obstacles: [] },
   3: {
     start: [2, 0],
     goal: [0, 6],
-    obstacles: [[2, 1], [1, 1], [1, 2]]
+    obstacles: [[1, 1], [1, 2], [1, 3],[1, 4],[1, 5],[1, 6],[1, 8]]
   },
   4: {
     start: [3, 3],
@@ -64,9 +68,9 @@ function drawGrid() {
 
   // Obstacles
   const obs = levels[currentLevel].obstacles;
-  ctx.fillStyle = "gray";
+  //ctx.fillStyle = "gray";
   obs.forEach(([ox, oy]) => {
-    ctx.fillRect(ox * gridSize, oy * gridSize, gridSize, gridSize);
+    ctx.drawImage(obstacleImg, ox * gridSize, oy * gridSize, gridSize, gridSize);
   });
 
   // Tujuan
@@ -78,7 +82,7 @@ function drawGrid() {
 
 function addCommand(cmd) {
   commands.push(cmd);
-  document.getElementById("commandList").textContent = commands.join(" → ");
+  document.getElementById("commandList").textContent = `Jumlah Perintah: ${commands.length}`;
 }
 
 function isObstacle(x, y) {
