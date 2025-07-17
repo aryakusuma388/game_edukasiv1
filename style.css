@@ -1,16 +1,50 @@
 body {
   font-family: sans-serif;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
+
 canvas {
   border: 2px solid black;
-  margin-bottom: 10px;
+  margin: 10px auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
 #controls button {
   margin: 5px;
   padding: 10px 15px;
+  font-size: 16px;
 }
+
 #commandList {
   font-weight: bold;
   color: darkblue;
+  margin-top: 10px;
+}
+
+/* Media Query untuk Mobile */
+@media (max-width: 600px) {
+  canvas {
+    width: 90vw;
+    height: auto;
+  }
+
+  #controls button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  #commandList {
+    font-size: 14px;
+  }
 }
