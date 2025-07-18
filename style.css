@@ -1,9 +1,9 @@
 body {
   font-family: sans-serif;
-  text-align: center;
   margin: 0;
   padding: 0;
-  background-color: #F0BB78; /* opsional, agar lebih cerah */
+  background-color: #F0BB78;
+  text-align: center;
 }
 
 /* HEADER LOGO */
@@ -11,7 +11,7 @@ body {
   width: 100%;
   padding: 10px 0;
   text-align: center;
-  background-color: #7B4019; /* latar belakang gelap agar logo lebih kontras */
+  background-color: #7B4019;
 }
 
 .header-logo {
@@ -19,53 +19,79 @@ body {
   height: auto;
 }
 
-/* Responsif: Batasi ukuran maksimal logo di desktop */
 @media (min-width: 768px) {
   .header-logo {
     max-width: 400px;
   }
 }
 
-canvas {
+/* LEVEL INDICATOR */
+#levelIndicator {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* WRAPPER */
+#gameWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* KIRI: Tombol Arah */
+#leftControls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* KANVAS TENGAH */
+#gameCanvas {
   border: 2px solid black;
-  margin: 10px auto;
-  display: block;
   max-width: 100%;
   height: auto;
 }
 
-#controls {
+/* KANAN: Tombol Run/Reset & Info */
+#rightControls {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
 }
 
-#controls button {
-  margin: 5px;
+/* TOMBOL */
+button {
   padding: 10px 15px;
   font-size: 16px;
+  cursor: pointer;
 }
 
-#commandList {
+/* INFO PERINTAH */
+#commandInfo {
   font-weight: bold;
   color: darkblue;
-  margin-top: 10px;
 }
 
-/* Media Query untuk Mobile */
-@media (max-width: 600px) {
-  canvas {
-    width: 90vw;
-    height: auto;
+/* RESPONSIF */
+@media (max-width: 768px) {
+  #gameWrapper {
+    flex-direction: column;
+    align-items: center;
   }
 
-  #controls button {
+  #leftControls, #rightControls {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  button {
+    font-size: 14px;
     padding: 8px 12px;
-    font-size: 14px;
-  }
-
-  #commandList {
-    font-size: 14px;
   }
 }
