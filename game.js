@@ -129,10 +129,11 @@ function runCommands() {
 
 function checkFinish() {
   if (robotX === finishX && robotY === finishY) {
-    alert(`Selamat! Selesai Level ${currentLevel}`);
+    alert(`Selamat Belajar ! Selesai Level ${currentLevel}`);
+    nextLevel();
     document.getElementById("nextLevelBtn").disabled = false;
   } else {
-    alert("Belum sampai tujuan. Coba lagi!");
+    alert("Kamu tidak sampai di Sekolah, Bolos yahh!");
   }
 }
 
@@ -149,6 +150,6 @@ function nextLevel() {
   if (currentLevel < 4) {
     setLevel(currentLevel + 1);
   } else {
-    alert("Semua level sudah selesai! 🎉");
+    alert("🎉 Semua level sudah selesai! Kamu murid andal Sekolah 🎉");
   }
 }
