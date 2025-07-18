@@ -6,35 +6,25 @@
   <link rel="icon" href="logo_ppg.jpg" type="image/png">
   <link rel="stylesheet" href="style.css" />
 </head>
+<header class="main-header">
+  <img src="icon/header.png" alt="Mari Bersekolah" class="header-logo" />
+</header>
 <body>
-  <header class="main-header">
-    <img src="icon/header.png" alt="Mari Bersekolah" class="header-logo" />
-  </header>
 
   <p id="levelIndicator">Level: 1</p>
+  <canvas id="gameCanvas" width="400" height="400"></canvas>
 
-  <!-- Bungkus keseluruhan elemen game -->
-  <div id="gameWrapper">
-    <!-- Panel kiri: Tombol arah -->
-    <div id="leftControls">
-      <button onclick="addCommand('LEFT')">KIRI</button>
-      <button onclick="addCommand('RIGHT')">KANAN</button>
-      <button onclick="addCommand('DOWN')">BAWAH</button>
-      <button onclick="addCommand('UP')">ATAS</button>
-    </div>
-
-    <!-- Canvas permainan -->
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-
-    <!-- Panel kanan: Tombol jalan, ulang, dan info -->
-    <div id="rightControls">
-      <button onclick="runCommands()">JALAN</button>
-      <button onclick="resetGame()">ULANG</button>
-      <div id="commandInfo">
-        Perintah: <span id="commandList">0</span>
-      </div>
-    </div>
+  <div id="controls">
+    <button onclick="addCommand('LEFT')">KIRI</button>
+    <button onclick="addCommand('RIGHT')">KANAN</button>
+    <button onclick="addCommand('DOWN')">BAWAH</button>
+    <button onclick="addCommand('UP')">ATAS</button>
+    <button onclick="runCommands()">JALAN</button>
+    <button onclick="resetGame()">ULANG</button>
+    
   </div>
+
+  <p>Perintah: <span id="commandList"></span></p>
 
   <script src="game.js"></script>
 </body>
