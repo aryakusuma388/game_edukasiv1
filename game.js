@@ -134,7 +134,8 @@ function checkFinish() {
     // Tunggu 2 detik sebelum ke level selanjutnya
     setTimeout(() => {
       nextLevel();
-    }, 2000);
+      resetGame();
+    }, 1000);
 
   } else {
     alert("Kamu tidak sampai di Sekolah, Bolos yahh!");
