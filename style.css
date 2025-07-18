@@ -3,6 +3,27 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
+  background-color: #f0f0f0; /* opsional, agar lebih cerah */
+}
+
+/* HEADER LOGO */
+.main-header {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #000; /* latar belakang gelap agar logo lebih kontras */
+}
+
+.header-logo {
+  max-width: 90%;
+  height: auto;
+}
+
+/* Responsif: Batasi ukuran maksimal logo di desktop */
+@media (min-width: 768px) {
+  .header-logo {
+    max-width: 400px;
+  }
 }
 
 canvas {
