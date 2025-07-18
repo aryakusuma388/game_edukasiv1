@@ -129,11 +129,15 @@ function runCommands() {
 
 function checkFinish() {
   if (robotX === finishX && robotY === finishY) {
-    alert(`Selamat kamu sampai di sekolah! Selesai Level ${currentLevel}`);
-    document.getElementById("nextLevelBtn").disabled = false;
-    nextLevel();
+    alert(`Selamat Belajar! Selesai Level ${currentLevel}`);
+    
+    // Tunggu 2 detik sebelum ke level selanjutnya
+    setTimeout(() => {
+      nextLevel();
+    }, 2000);
+
   } else {
-    alert("Kamu dimana?? Lagi Bolos Yah!");
+    alert("Kamu tidak sampai di Sekolah, Bolos yahh!");
   }
 }
 
