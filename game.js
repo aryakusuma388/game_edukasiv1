@@ -130,13 +130,11 @@ function runCommands() {
 function checkFinish() {
   if (robotX === finishX && robotY === finishY) {
     alert(`Selamat Belajar! Selesai Level ${currentLevel}`);
-    
-    // Tunggu 2 detik sebelum ke level selanjutnya
+    nextLevel();
     setTimeout(() => {
-      nextLevel();
       resetGame();
     }, 1000);
-
+  
   } else {
     alert("Kamu tidak sampai di Sekolah, Bolos yahh!");
   }
