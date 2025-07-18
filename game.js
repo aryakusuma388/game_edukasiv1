@@ -82,7 +82,7 @@ function drawGrid() {
 
 function addCommand(cmd) {
   commands.push(cmd);
-  document.getElementById("commandList").textContent = `Jumlah Perintah: ${commands.length}`;
+  document.getElementById("commandList").textContent = ` ${commands.length}`;
 }
 
 function isObstacle(x, y) {
