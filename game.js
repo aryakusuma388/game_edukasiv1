@@ -129,10 +129,11 @@ function runCommands() {
 
 function checkFinish() {
   if (robotX === finishX && robotY === finishY) {
-    alert(`Selamat! Selesai Level ${currentLevel}`);
+    alert(`Selamat kamu sampai di sekolah! Selesai Level ${currentLevel}`);
     document.getElementById("nextLevelBtn").disabled = false;
+    nextLevel();
   } else {
-    alert("Belum sampai tujuan. Coba lagi!");
+    alert("Kamu dimana?? Lagi Bolos Yah!");
   }
 }
 
