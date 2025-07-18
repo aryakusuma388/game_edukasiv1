@@ -52,7 +52,7 @@ function setLevel(levelNumber) {
   finishY = level.goal[1] * gridSize;
   commands = [];
   document.getElementById("commandList").textContent = "";
-  document.getElementById("levelIndicator").textContent = Level: ${currentLevel};
+  document.getElementById("levelIndicator").textContent = `Level: ${currentLevel}`;
   document.getElementById("nextLevelBtn").disabled = true;
   drawGrid();
 }
@@ -82,7 +82,7 @@ function drawGrid() {
 
 function addCommand(cmd) {
   commands.push(cmd);
-  document.getElementById("commandList").textContent = Jumlah Perintah: ${commands.length};
+  document.getElementById("commandList").textContent = `Jumlah Perintah: ${commands.length}`;
 }
 
 function isObstacle(x, y) {
@@ -129,11 +129,10 @@ function runCommands() {
 
 function checkFinish() {
   if (robotX === finishX && robotY === finishY) {
-    alert(Selamat Belajar ! Selesai Level ${currentLevel});
-    nextLevel();
+    alert(`Selamat! Selesai Level ${currentLevel}`);
     document.getElementById("nextLevelBtn").disabled = false;
   } else {
-    alert("Kamu tidak sampai di Sekolah, Bolos yahh!");
+    alert("Belum sampai tujuan. Coba lagi!");
   }
 }
 
@@ -150,6 +149,6 @@ function nextLevel() {
   if (currentLevel < 4) {
     setLevel(currentLevel + 1);
   } else {
-    alert("🎉 Semua level sudah selesai! Kamu murid andal Sekolah 🎉");
+    alert("Semua level sudah selesai! 🎉");
   }
 }
