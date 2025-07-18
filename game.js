@@ -131,9 +131,15 @@ function checkFinish() {
   if (robotX === finishX && robotY === finishY) {
     alert(`Selamat Belajar ! Selesai Level ${currentLevel}`);
     nextLevel();
-    document.getElementById("nextLevelBtn").disabled = false;
+    // Periksa apakah masih ada level berikutnya
+    if (currentLevel < levels.length) {
+      loadLevel(currentLevel); // langsung muat level berikutnya
+    } else {
+      alert("Semua level selesai! Terima kasih sudah bermain!");
+    }
   } else {
     alert("Kamu tidak sampai di Sekolah, Bolos yahh!");
+    resetGame();
   }
 }
 
@@ -152,4 +158,28 @@ function nextLevel() {
   } else {
     alert("🎉 Semua level sudah selesai! Kamu murid andal Sekolah 🎉");
   }
+}
+
+function loadLevel(levelIndex) {
+  currentLevel = levelIndex;
+  map = levels[levelIndex];
+
+  // Temukan posisi awal robot dan finish
+  for (let y = 0; y < map.length; y++) {
+    for (let x = 0; x < map[y].length; x++) {
+      if (map[y][x] === 2) {
+        robotX = x;
+        robotY = y;
+      }
+      if (map[y][x] === 3) {
+        finishX = x;
+        finishY = y;
+      }
+    }
+  }
+
+  commands = [];
+  updateCommandList();
+  drawMap();
+  document.getElementById("levelIndicator").innerText = `Level: ${currentLevel + 1}`;
 }
